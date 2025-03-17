@@ -13,21 +13,21 @@ public class AsphaltCar extends RallyCar{
 
     @Override
     public String getMake() {
-        return;
+        return make;
     }
 
     @Override
     public String getModel() {
-        return "";
+        return model;
     }
 
     @Override
     public int getHorsePower() {
-        return 0;
+        return horsePower;
     }
 
     @Override
-    public int calculatePerformance() {
-
+    public double calculatePerformance() {
+        return horsePower * downforce / 1000;
     }
 }

@@ -1,7 +1,7 @@
 public abstract class RallyCar {
-    private String make;
-    private String model;
-    private int horsePower;
+    protected String make;
+    protected String model;
+    protected int horsePower;
 
     public RallyCar(String make, String model, int horsePower){
         this.make = make;
@@ -19,5 +19,5 @@ public abstract class RallyCar {
     }
 
     //abstract method!
-    public abstract int calculatePerformance();
+    public abstract double calculatePerformance();
 }

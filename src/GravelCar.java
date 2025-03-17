@@ -9,7 +9,24 @@ public class GravelCar extends RallyCar {
     }
 
     @Override
-    public int calculatePerformance() {
-        return;
+    public String getMake() {
+        return make;
+    }
+
+    @Override
+    public String getModel() {
+        return model;
+    }
+
+    @Override
+    public int getHorsePower() {
+        return horsePower;
+    }
+    public double getSuspensionTravel(){
+        return suspensionTravel;
+    }
+    @Override
+    public double calculatePerformance() {
+        return horsePower * suspensionTravel / 1200;
     }
 }

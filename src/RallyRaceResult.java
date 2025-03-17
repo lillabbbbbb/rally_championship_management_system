@@ -1,14 +1,16 @@
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RallyRaceResult implements RaceResult{
     private String raceName;
     private String location;
-    private Map<Driver, Integer> results;
+    private ArrayList<Driver> drivers;
+    private ArrayList<Integer> points;
 
     public RallyRaceResult(String raceName, String location){
         this.raceName = raceName;
         this.location = location;
+        drivers = new ArrayList<>();
+        points = new ArrayList<>();
     }
 
     //getters
@@ -19,23 +21,30 @@ public class RallyRaceResult implements RaceResult{
         return location;
     }
 
+    @Override
     public int getDriverPoints(Driver driver){
-
+        for(int i = 0; i < this.getResults().size(); i++){
+            if(this.getResults().get(i).getName().equals(driver.getName())){ //comparing object based on name
+                return this.points.get(i);
+            }
+        }
+        //if driver not found
+        return -1;
     }
 
-    //inherited methods from superclass
+    //inherited methods from superclass:
     @Override
-    public void recordRaceResult(Driver driver, int position, int points) {
+    public Driver recordRaceResult(Driver driver, int position, int points) {
+        this.drivers.add(driver);
+        this.points.add(points);
 
-    }
-
-    @Override
-    public void getRaceResults(Driver driver) {
-
+        //add points to driver
+        driver.addPoints(points);
+        return driver;
     }
 
     @Override
     public List<Driver> getResults() {
-        return List.of();
+        return drivers;
     }
 }
