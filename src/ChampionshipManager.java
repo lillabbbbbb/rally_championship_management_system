@@ -40,9 +40,10 @@ public class ChampionshipManager {
     public Driver getLeadingDriver(){
         Driver leadingDriver = null;
         int max = 0;
-        for(int i = 0; i < ChampionshipManager.getInstance().getDriverStandings().size(); i++){
+        for(int i = 0; i < instance.getDriverStandings().size(); i++){
               if(ChampionshipManager.getInstance().getDriverStandings().get(i).getTotalPoints() > max){
                   leadingDriver = ChampionshipManager.getInstance().getDriverStandings().get(i);
+                  max = ChampionshipManager.getInstance().getDriverStandings().get(i).getTotalPoints();
               }
         }
         return leadingDriver;

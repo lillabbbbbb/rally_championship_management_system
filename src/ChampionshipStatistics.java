@@ -12,6 +12,7 @@ public class ChampionshipStatistics {
         for(int i = 0; i < ChampionshipManager.getInstance().getDriverStandings().size(); i++){
             if(ChampionshipManager.getInstance().getDriverStandings().get(i).getTotalPoints() > max){
                 country =  ChampionshipManager.getInstance().getDriverStandings().get(i).getCountry();
+                max = ChampionshipManager.getInstance().getDriverStandings().get(i).getTotalPoints();
             }
         }
         return country;

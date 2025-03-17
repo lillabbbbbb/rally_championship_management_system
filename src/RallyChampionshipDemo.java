@@ -44,9 +44,7 @@ public class RallyChampionshipDemo {
 
 
 
-
-
-        //display all drivers
+        //print all drivers and their points
         for(int i = 0; i < cm.getDriverStandings().size(); i++){
             System.out.println((i+1) + ". " + cm.getDriverStandings().get(i).getName() + " (" + cm.getDriverStandings().get(i).getCountry() + "): " + cm.getDriverStandings().get(i).getTotalPoints()  + " points");
         }

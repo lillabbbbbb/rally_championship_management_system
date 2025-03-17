@@ -21,6 +21,7 @@ public class RallyRaceResult implements RaceResult{
         return location;
     }
 
+    //inherited methods from superclass:
     @Override
     public int getDriverPoints(Driver driver){
         for(int i = 0; i < this.getResults().size(); i++){
@@ -32,7 +33,6 @@ public class RallyRaceResult implements RaceResult{
         return -1;
     }
 
-    //inherited methods from superclass:
     @Override
     public Driver recordRaceResult(Driver driver, int position, int points) {
         this.drivers.add(driver);
